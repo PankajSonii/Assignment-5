@@ -1,0 +1,325 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red255\green0\blue0;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs36\lang9 1. Q Print odd numbers in an array\par
+Ans: var odd=function(n)\{\par
+var d=[];\par
+for(var i=0; i<=n; i++) \{\par
+    if(i%2!==0)\{\par
+\par
+    d.push(i)\par
+\} \par
+\par
+\}return d\par
+\}\par
+\par
+console.log(odd(50))\par
+Output: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49]\par
+\par
+\ul IIFE\ulnone\par
+(function(n)\{\par
+var d=[];\par
+for(var i=0; i<=n; i++) \{\par
+    if(i%2!==0)\{\par
+\par
+    d.push(i)\par
+\} \par
+\par
+\}return d //console.log(d) \par
+\})(50)\par
+Output: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49]\par
+\par
+\par
+2. Q Convert all the strings to title caps in a string array\par
+\par
+Ans: var uppercase=function(str)\{\par
+\par
+let a=str[0].toUpperCase();\par
+return a\par
+\}\par
+\par
+console.log(uppercase(["hello my name is pankaj soni"])\par
+output:  HELLO MY NAME IS PANKAJ SONI\par
+\par
+\ul IIFE:\par
+\par
+\ulnone (function(str)\{\par
+\par
+let a=str[0].toUpperCase();\par
+return a\par
+\})\par
+\par
+console.log(uppercase(["hello my name is pankaj soni"])\par
+output:  HELLO MY NAME IS PANKAJ SONI\par
+\par
+\par
+3. Q Sum of all numbers in an array?\par
+Ans: var add=function(n)\{\par
+var sum=0;\par
+for(var i=0; i<n.length; i++) \{\par
+    \par
+    sum=sum+n[i];\par
+\} \par
+\par
+return sum\par
+\}\par
+console.log(add([10,20,30,40,50,60]))\par
+\par
+Output: 210\par
+\par
+\ul IIFE:\par
+\ulnone (function(n)\{\par
+var sum=0;\par
+for(var i=0; i<n.length; i++) \{\par
+    \par
+    sum=sum+n[i];\par
+\} \par
+\par
+return sum\par
+\})\par
+console.log(add([10,20,30,40,50,60]))\par
+Output: 210\par
+4. Q: Return all the prime numbers in an array?\par
+Ans: var primeNumbers=function(n)\{\par
+var arr=[]\par
+for(var i=2; i<n; i++)\{\par
+    for(var j=2; j<i; j++)\{\par
+        if(i%j==0)\{\par
+            break;\par
+        \}\par
+    \}\par
+    if(i==j)\{\par
+        arr.push(i)\par
+    \}\par
+\}return arr\par
+\}\par
+console.log(primeNumbers(20))\par
+\par
+Output: [2, 3, 5, 7, 11, 13, 17, 19]\par
+\ul IIFE:\line\line\ulnone Return all the prime numbers in an array?\par
+Ans: (function(n)\{\par
+var arr=[]\par
+for(var i=2; i<n; i++)\{\par
+    for(var j=2; j<i; j++)\{\par
+        if(i%j==0)\{\par
+            break;\par
+        \}\par
+    \}\par
+    if(i==j)\{\par
+        arr.push(i)\par
+    \}\par
+\}return arr\par
+\})\par
+console.log(primeNumbers(20))\par
+\par
+Output: [2, 3, 5, 7, 11, 13, 17, 19]\par
+\par
+\par
+5. Q Return all the palindromes in an array?\par
+A. var palildrome=function (argument) \{\par
+ // var demo=argument.split("")\par
+  \par
+  var demo2=argument[0].toString().split("").reverse()\par
+  //return demo2\par
+  var demo3=demo2.join("")\par
+  var demo4=parseInt(demo3)\par
+  \par
+  if(demo4==argument[0])\{\par
+    return argument + " is Palindrome" \par
+  \}else\{\par
+  return argument+ " is not Palindrome"\}\par
+\}\par
+console.log(palildrome([121]))\par
+\par
+Output: 121 is Palildrome\par
+\par
+\ul IIFE\line\line (\ulnone function (argument) \{\par
+ // var demo=argument.split("")\par
+  \par
+  var demo2=argument[0].toString().split("").reverse()\par
+  //return demo2\par
+  var demo3=demo2.join("")\par
+  var demo4=parseInt(demo3)\par
+  \par
+  if(demo4==argument[0])\{\par
+    return argument + " is Palindrome" \par
+  \}else\{\par
+  return argument+ " is not Palindrome"\}\par
+\})\par
+console.log(palildrome([121]))\par
+\par
+Output: 121 is Palildrome\par
+\par
+\par
+6. Q Return median of two sorted arrays of the same size\par
+Ans: var median=function(arr1, arr2)\{\par
+    var total =[...arr1, ...arr2].sort((a,b)=>a-b)\par
+    // console.log(total) ;\par
+    var mid=Math.floor(total.length/2);\par
+    //console.log(mid)\par
+     if(total.length%2!==0)\{\par
+        return (total[mid])\par
+     \}else if(total.length%2==0)\{\par
+         return(Math.floor(total[mid]+total[mid-1]/2)) \par
+\par
+     \}else\{\par
+         return "program not working"\par
+     \}\par
+         \par
+     \}\par
+     console.log(median([4,5,6,1],[7,9,8,10,11]))\par
+output: 7\par
+\par
+\ul IIFE\line\line (\ulnone function(arr1, arr2)\{\par
+    var total =[...arr1, ...arr2].sort((a,b)=>a-b)\par
+    // console.log(total) ;\par
+    var mid=Math.floor(total.length/2);\par
+    //console.log(mid)\par
+     if(total.length%2!==0)\{\par
+        return (total[mid])\par
+     \}else if(total.length%2==0)\{\par
+         return(Math.floor(total[mid]+total[mid-1]/2)) \par
+\par
+     \}else\{\par
+         return "program not working"\par
+     \}\par
+         \par
+     \})\par
+\par
+     console.log(median([4,5,6,1],[7,9,8,10,11]))\par
+output: 7\par
+\par
+\par
+7.Q Remove duplicates from an array\par
+Ans:  var duplicate=function(array1)\{\par
+  var result= [...new Set(array1)];\par
+  return result\par
+\}\par
+\ul IIFE\par
+\ulnone (function(array1)\{\par
+  var result= [...new Set(array1)];\par
+  return result\par
+\})\par
+\par
+console.log(duplicate([6,4,4,1,2,6,8]) )\par
+\par
+\par
+\par
+8. Q Rotate an array by k times?\par
+Ans: var arrayRotate=function(array, k)\{\par
+for (var j=0; j<k; j++)\par
+        \{\par
+            for ( var i=array.length-1; i>0; i--)\par
+            \{\par
+                // shifting towards the right\par
+                console.log(i)\par
+                temp=array[i-1];\par
+                array[i-1]=array[i];\par
+                array[i]=temp;\par
+            \} \par
+        \}\par
+        return array \par
+\}\par
+\par
+IIFE:\line\line (function(array, k)\{\par
+for (var j=0; j<k; j++)\par
+        \{\par
+            for ( var i=array.length-1; i>0; i--)\par
+            \{\par
+                // shifting towards the right\par
+                console.log(i)\par
+                temp=array[i-1];\par
+                array[i-1]=array[i];\par
+                array[i]=temp;\par
+            \} \par
+        \}\par
+        return array \par
+\})\par
+\par
+console.log(arrayRotate([1,2,3,4,5,6,7], 3))\par
+\par
+\par
+
+\pard\sa200\sl276\slmult1\qc\cf1\ul\b Do the below programs in arrow functions\ulnone\par
+
+\pard\sa200\sl276\slmult1\cf0\b0\par
+1. Q-Print odd numbers in an array\par
+A-var odd=(n)=>\{\par
+var d=[];\par
+for(var i=0; i<=n; i++) \{\par
+    if(i%2!==0)\{\par
+\par
+    d.push(i)\par
+\} \par
+\par
+\}return d\par
+\}\par
+console.log(odd(20))\par
+\par
+2.Q-Convert all the strings to title caps in a string array?\par
+A-var uppercase=(str)=>\{\par
+\par
+let a=str[0].toUpperCase();\par
+return a\par
+\}\par
+\par
+console.log(uppercase(["hello world!"]))\par
+\par
+3.Sum of all numbers in an array?\par
+A-var add=(n)=>\{\par
+ // console.log(n.length)\par
+var sum=0;\par
+for(var i=0; i<n.length; i++) \{\par
+    \par
+    sum=sum+n[i];\par
+   // console.log(sum)\par
+\} \par
+\par
+return sum\par
+\}\par
+console.log(add([10,20,30,40,50,60]))\par
+\par
+Output:60\par
+\par
+//4. Q: Return all the prime numbers in an array?\par
+var primeNumbers=(n)=>\{\par
+var arr=[]\par
+for(var i=2; i<n; i++)\{\par
+    for(var j=2; j<i; j++)\{\par
+        if(i%j==0)\{\par
+            break;\par
+        \}\par
+    \}\par
+    if(i==j)\{\par
+        arr.push(i)\par
+    \}\par
+\}return arr\par
+\}\par
+console.log(primeNumbers(20))\par
+\par
+Output: [2, 3, 5, 7, 11, 13, 17, 19]\par
+\par
+5. Q Return all the palindromes in an array?\par
+A. var palildrome= (argument)=> \{\par
+ // var demo=argument.split("")\par
+  \par
+  var demo2=argument[0].toString().split("").reverse()\par
+  //return demo2\par
+  var demo3=demo2.join("")\par
+  var demo4=parseInt(demo3)\par
+  \par
+  if(demo4==argument[0])\{\par
+    return argument + " is Palindrome" \par
+  \}else\{\par
+  return argument+ " is not Palindrome"\}\par
+\}\par
+console.log(palildrome([121]))\par
+\par
+Output: 121 is Palildrome\par
+\par
+\par
+\par
+\par
+\par
+}
+ 
